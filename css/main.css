@@ -1,0 +1,49 @@
+div {
+    border: solid 2px black;
+}
+
+#headerDiv {
+    background-color: rgb(20,20,20);
+    color:white;
+}
+
+#introDiv {
+    background-color: rgb(239,239,239);
+    padding: 15px 15px;
+    min-height: 25vh;
+    border: solid 1px black;
+    text-align: center;
+
+}
+#introDiv p {
+    max-width: 75%;
+    margin: auto auto;
+}
+
+#factDiv {
+     background-color: lightOrange;
+     padding: 15px 15px;
+     background: url("../img/binaryPass.jpg") no-repeat center center;
+     background-size: cover;
+     color: white;
+     text-align: center;
+     min-height: 30vh;
+}
+
+#filterDiv {
+    background-color: white;
+    padding: 15px 15px;
+}
+
+#filterInput {
+    background-color: gray;
+}
+
+#tableDiv {
+    background-color: lightGreen;
+    padding: 15px 15px;
+}
+
+.ui-content {
+   padding: 0 0;
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title> The Password Black Book</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+
+    <!-- Jquery source 
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css"/>
+        <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    -->
+     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="js/vendor/shuffleLetters.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div data-role="page" id="page1" data-theme="d">
+
+            <div data-role="header" data-position="fixed" id="headerDiv">
+                <h1> The Password Black Book </h1>
+            </div>
+
+            <div data-role="content">   
+
+                <div id="introDiv"> 
+
+                    <h2 id="shuffleText"> > The latest list of the most common passwords have leaked </h2>
+
+                    <p> A concerning analysis of the most prevalent passwords on the internet. This app higlights the epidemic of weak passwords that are used to secure our pesonal data. Lets hope your passwords will never feature here.... </p>
+                   <!-- <p> This app aims to educate people on what makes password weak and easily cracked. Following a few simple rules outlined by this app can make your passwords exponentially stronger and your personal infomation safer. </p>-->
+                 
+                </div> <!-- /introDiv -->
+
+                <div id="factDiv">
+
+                    <h3> Fact div </h3>
+                    <p> Protect your online personal information.. Use unique strong passwords and definetly not any of the following examples
+                    </p>
+
+
+                </div> <!-- /factDiv -->
+
+
+                <div id="filterDiv">
+
+                    <p> Search passwords below </p>
+                    <form class="ui-filterable">
+                        <input id="filterInput" data-type="search">
+                    </form>
+
+                </div>  <!-- /filterDiv -->
+
+
+                <div id="tableDiv">
+                   
+                   <ul data-role="listview" data-autodividers="true" data-filter="true" data-filter-placeholder="Filter me.." id="listCustom" data-divider-theme='a' data-input="#filterInput">
+                    </ul>
+
+                 </div> <!-- /tableDiv -->
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script>
+        console.log('test');
+                
+                jsonTask();
+
+                // Third party plugin use to shuffle text
+                $("#shuffleText").shuffleLetters();
+
+        </script>
+    </body>
+</html>

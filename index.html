@@ -10,17 +10,34 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
 
-    <!-- Jquery source 
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css"/>
-        <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    -->
-     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-    <script src="js/vendor/shuffleLetters.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    </head>
+         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+        <script src="js/vendor/shuffleLetters.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- Favicon details -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/favicon/manifest.json">
+        <link rel="shortcut icon" href="favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+        <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        </head>
     <body>
         <div data-role="page" id="page1" data-theme="d">
 
@@ -28,25 +45,27 @@
                 <h1> The Password Black Book </h1>
             </div>
 
-            <div data-role="content">   
+            <div role="main" class="ui-content">   
 
                 <div id="introDiv"> 
 
-                    <h2 id="shuffleText"> > The latest list of the most common passwords have leaked </h2>
+                    <h2 id="shuffleText"> The World's most commonly used passwords have been leaked </h2>
 
-                    <p> A concerning analysis of the most prevalent passwords on the internet. This app higlights the epidemic of weak passwords that are used to secure our pesonal data. Lets hope your passwords will never feature here.... </p>
-                   <!-- <p> This app aims to educate people on what makes password weak and easily cracked. Following a few simple rules outlined by this app can make your passwords exponentially stronger and your personal infomation safer. </p>-->
+                    <p> The Password Black Book was developed to highhlight the epidemic of weak passwords that are currently in circulation across the web. The scary part is that these are the 100 most common passwords. The only thing protecting people's personal data.</p>
+                    
+                    <a data-role="button" href="#infoPage" data-transition="slide"> Virtual Page</a>
                  
-                </div> <!-- /introDiv -->
+                </div> <!-- / introDiv -->
 
                 <div id="factDiv">
 
                     <h3> Fact div </h3>
-                    <p> Protect your online personal information.. Use unique strong passwords and definetly not any of the following examples
+                    <p> Protect your online personal information... Use unique strong passwords and definetly do not use any of the passwords that feature on this site.
                     </p>
+                     <p> This is an eye opening analysis of the most prevalent passwords on the internet.</p>
 
 
-                </div> <!-- /factDiv -->
+                </div> <!-- / factDiv -->
 
 
                 <div id="filterDiv">
@@ -56,30 +75,72 @@
                         <input id="filterInput" data-type="search">
                     </form>
 
-                </div>  <!-- /filterDiv -->
+                </div>  <!-- / filterDiv -->
 
 
                 <div id="tableDiv">
                    
-                   <ul data-role="listview" data-autodividers="true" data-filter="true" data-filter-placeholder="Filter me.." id="listCustom" data-divider-theme='a' data-input="#filterInput">
+                   <ul data-role="listview" data-autodividers="true" data-filter="true" data-filter-placeholder="Filter me.." id="listCustom" data-divider-theme='a' data-input="#filterInput" class="ui-nodisc-icon ui-alt-icon">
                     </ul>
 
-                 </div> <!-- /tableDiv -->
+                 </div> <!-- / tableDiv -->
 
+            </div> <!-- / content -->
+
+            <div data-role="footer" id="footerDiv" > 
+                    <h4>
+                        Lets hope your password(s) will <strong>NEVER </strong> feature here....
+                    </h4> 
+
+                    <p>
+                        Copyright © 2015 RHDesigns
+                    </p>
+            </div> <!-- / footerDiv -->
+
+        </div> <!-- / page1 -->
+
+        <!-- Start of infoPage -->
+        <div data-role="page" id="infoPage">
+                <div data-role="header" id="headerDiv">
+                    <h1> Header </h1>
+                    <a href="#" data-rel="back" data-icon="back" class="ui-nodisc-icon" id="backBtn" data-transition="flow">Back</a>
                 </div>
-
-            </div>
+                <div role="main" class="ui-content"> 
+                    <p>Page 2 content</p>
+                </div>
+                <div data-role="footer" id="footerDiv" data-position="fixed"></div>
         </div>
 
         <script src="js/main.js"></script>
         <script>
-        console.log('test');
-                
-                jsonTask();
 
-                // Third party plugin use to shuffle text
+          $(document).on("pageshow", "#page1", function () {
+
+                jsonTask();
+                // Third party plugin used to shuffle text
                 $("#shuffleText").shuffleLetters();
 
+                /* 
+                Collapse autodivider code reproduced from http://blog.bvarga.com/?p=24
+                */
+               $('.ui-li-divider').click( function( ev ){
+                  var li = $(ev.target).next(':not(.ui-li-divider)');
+                  console.log($this.text);
+                /*  var b = li.is(':visible');
+                  while ( li.length > 0 ) {
+                    if (b)
+                    //  $("#factDiv").hide();
+                console.log('a');
+                    else
+                    //$("#factDiv").show();
+                console.log('b');
+                    li = li.next(':not(.ui-li-divider)');
+                  }*/
+                });  
+
+            });
+            
+                          
         </script>
     </body>
 </html>

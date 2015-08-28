@@ -13,7 +13,8 @@ function jsonTask (){
 
                 $.each(passwords,function(i,val){
                     var passVal = val.replace(/\s+/g, '');
-                    passwordsHtml.push("<li><a href='#'>" + passVal + "</a></li>");
+                    var href = "#infoPage?password=" + passVal;
+                    passwordsHtml.push("<li><a href='" + href + "'>" + passVal + "</a></li>");
                 });
 
                 $("#listCustom").append(passwordsHtml).listview('refresh');

@@ -5,13 +5,14 @@ div {
 #headerDiv {
     background-color: rgb(20,20,20);
     color:white;
+    min-height: 6vh;
 }
 
 #introDiv {
     background-color: rgb(239,239,239);
     padding: 15px 15px;
-    min-height: 25vh;
-    border: solid 1px black;
+    min-height: 30vh;
+    border: solid 2px lightGray;
     text-align: center;
 
 }
@@ -21,13 +22,14 @@ div {
 }
 
 #factDiv {
-     background-color: lightOrange;
+     background-color: black;
      padding: 15px 15px;
      background: url("../img/binaryPass.jpg") no-repeat center center;
      background-size: cover;
      color: white;
      text-align: center;
-     min-height: 30vh;
+     min-height: 25vh;
+     border: solid 2px black;
 }
 
 #filterDiv {
@@ -44,6 +46,34 @@ div {
     padding: 15px 15px;
 }
 
+#footerDiv {
+    background-color: orange;
+}
+
+#footerDiv p {
+    max-width: 75%;
+    margin: auto auto;
+    text-align: center;
+}
+
+#shuffleText {
+    color: rgb(232,125,42);
+    margin: 40px;
+}
+
+#backBtn {
+    background-color: rgb(232,125,42);
+    color: white;
+
+}
+
 .ui-content {
    padding: 0 0;
+}
+
+
+
+body .ui-header .ui-title {
+ white-space: normal;
+ padding: auto auto;
 }

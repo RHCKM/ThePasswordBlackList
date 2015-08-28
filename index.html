@@ -51,9 +51,7 @@
 
                     <h2 id="shuffleText"> The World's most commonly used passwords have been leaked </h2>
 
-                    <p> The Password Black Book was developed to highhlight the epidemic of weak passwords that are currently in circulation across the web. The scary part is that these are the 100 most common passwords. The only thing protecting people's personal data.</p>
-                    
-                    <a data-role="button" href="#infoPage" data-transition="slide"> Virtual Page</a>
+                    <p> The Password Black Book was developed to highlight the epidemic of weak passwords that are currently in circulation across the web. The scary part is that these are the 100 most common passwords.</p>
                  
                 </div> <!-- / introDiv -->
 
@@ -101,43 +99,43 @@
 
         <!-- Start of infoPage -->
         <div data-role="page" id="infoPage">
+
                 <div data-role="header" id="headerDiv">
-                    <h1> Header </h1>
+                    <h1> Password Analysis </h1>
                     <a href="#" data-rel="back" data-icon="back" class="ui-nodisc-icon" id="backBtn" data-transition="flow">Back</a>
                 </div>
+
                 <div role="main" class="ui-content"> 
-                    <p>Page 2 content</p>
-                </div>
+                   
+                    <div id="testIntroDiv">
+                             <h1 id='shuffleInfoText'> The password shuffled </h1>
+                            <p>This password comes in at <strong>  #5 </strong> on the list of 'Top 100 most common passwords'</p>
+                    </div> <!-- / introDiv -->
+
+                    <div id="testResultsDiv">
+
+                        <p class="lowercaseTest"> lowercaseTest results</p>
+                        <p class="uppercaseTest">  <a class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-b ui-btn-inline"></a> uppercaseTest results</p>
+                        <p class="numberTest"> numberTest results</p>
+                        <p class="symbolsTest"> symbolsTest results</p>
+                        <p class="lengthTest"> lengthTest results</p>
+                    </div> <!-- / testsDiv -->
+                
+                </div><!-- / Content Div -->
+
                 <div data-role="footer" id="footerDiv" data-position="fixed"></div>
-        </div>
+        </div> <!-- End of infoPage -->
 
         <script src="js/main.js"></script>
         <script>
+            
+            jsonTask();
 
           $(document).on("pageshow", "#page1", function () {
 
-                jsonTask();
+                
                 // Third party plugin used to shuffle text
                 $("#shuffleText").shuffleLetters();
-
-                /* 
-                Collapse autodivider code reproduced from http://blog.bvarga.com/?p=24
-                */
-               $('.ui-li-divider').click( function( ev ){
-                  var li = $(ev.target).next(':not(.ui-li-divider)');
-                  console.log($this.text);
-                /*  var b = li.is(':visible');
-                  while ( li.length > 0 ) {
-                    if (b)
-                    //  $("#factDiv").hide();
-                console.log('a');
-                    else
-                    //$("#factDiv").show();
-                console.log('b');
-                    li = li.next(':not(.ui-li-divider)');
-                  }*/
-                });  
-
             });
             
                           

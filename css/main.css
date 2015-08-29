@@ -108,7 +108,7 @@
     background-color: rgb(239,239,239);
     padding: 15px 15px;
     min-height: 20vh;
-    border: solid 2px lightGray;
+    /*border: solid 2px lightGray;*/
     text-align: center;
 }
 
@@ -117,11 +117,17 @@
     padding: 15px 15px;
     min-height: 15vh;
     text-align: center;
+    border: solid 2px lightGray;
 }
 
 #testIntroDiv p {
     max-width: 75%;
     margin: auto auto;
+}
+
+#testIntroDesc {
+
+
 }
 
 

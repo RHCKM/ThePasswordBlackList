@@ -56,27 +56,30 @@ function showInfoPage ( urlObj, options)
     console.log(passwordInfo);
     console.log(pageSelector);
 
-    var passText = '<span id="pass"><strong>Passed...</strong></span>';
-    var failText = '<span id="fail"><strong>Failed...</strong></span>';
+    var passText = '<span id="pass"><strong>Passed...</strong></span> Utilises ';
+    var failText = '<span id="fail"><strong>Failed...</strong></span> Does not contain ';
 
-    var lowercaseText = ' The Lowercase character test';
-    var uppercaseText = ' The Uppercase character test';
-    var numbersText   = ' The Numeric character test';
-    var symbolsText   = ' The Symbolic character test';
-    var lengthText   = ' The minimum recommended character length';
+    var lowercaseText = 'a Lowercase character';
+    var uppercaseText = 'a Uppercase character';
+    var numbersText   = 'a Numeric character';
+    var symbolsText   = 'a Symbolic character';
+    var lengthText   = ' the minimum recommended password length';
 
     var passIcon = '<a class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-b ui-btn-inline"></a>';
     var failIcon = '<a class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-b ui-btn-inline"></a>';
 
-    var introDesc = "This password comes in at <strong>  [[rank]] </strong> on the list of <strong>'100 most common passwords'</strong> and failed [[failRate]] of strength tests";
+    var introDescTemp = "This password came in at <strong>  [[rank]] </strong> on the list of the <strong>100 Most Common Passwords</strong>. It failed <span id='fail'><strong> [[failRate]]</strong></span> of the basic strength test checks";
     if(passwordInfo){
 
        var $page = $(pageSelector); 
 
        $('#shuffleInfoText').text(password);
 
-       // update intro desc with password rank and amount of tests passed
-       $('#testIntroDesc').htm
+       // update intro desc with password rank and # of tests passed
+        var introDesc = introDescTemp.replace("[[rank]]","#" + passwordInfo['Rank']);
+        introDesc = introDesc.replace("[[failRate]]", passwordInfo['NumberOfFailedTests']);
+        console.log('Intro Desc: ' + introDesc);
+       $('#testIntroDesc').html(introDesc);
 
         // Method to populate html with result of password tests
        function populateResultHtml (selector, message, testKey) {

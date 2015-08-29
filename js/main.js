@@ -61,18 +61,22 @@ function showInfoPage ( urlObj, options)
 
     var lowercaseText = ' The Lowercase character test';
     var uppercaseText = ' The Uppercase character test';
-    var numbersText   = ' The Numbers character test';
-    var symbolsText   = ' The Symbols character test';
-    var lengthText   = ' The password minimum length test';
+    var numbersText   = ' The Numeric character test';
+    var symbolsText   = ' The Symbolic character test';
+    var lengthText   = ' The minimum recommended character length';
 
     var passIcon = '<a class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-b ui-btn-inline"></a>';
     var failIcon = '<a class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-b ui-btn-inline"></a>';
 
+    var introDesc = "This password comes in at <strong>  [[rank]] </strong> on the list of <strong>'100 most common passwords'</strong> and failed [[failRate]] of strength tests";
     if(passwordInfo){
 
        var $page = $(pageSelector); 
 
        $('#shuffleInfoText').text(password);
+
+       // update intro desc with password rank and amount of tests passed
+       $('#testIntroDesc').htm
 
         // Method to populate html with result of password tests
        function populateResultHtml (selector, message, testKey) {

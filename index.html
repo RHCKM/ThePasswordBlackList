@@ -1,4 +1,18 @@
 <!doctype html>
+<!--
+* Author: Robert Hunter
+* Assignment: WI2.0 Mobile Development, Digital Skills Academy
+* Date : 2015/07/15
+* Ref: 
+    https://api.jquery.com/
+    http://jquerymobile.com/
+    http://devdocs.io/javascript/
+    http://tutorialzine.com/2011/09/shuffle-letters-effect-jquery/
+    https://themeroller.jquerymobile.com/
+    http://stackoverflow.com/questions/tagged/jquery-mobile
+    http://realfavicongenerator.net/
+    http://www.initializr.com/
+-->
 <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -11,6 +25,8 @@
         <link rel="stylesheet" href="css/normalize.min.css">
 
          <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+         <link rel="stylesheet" href="themes/PasswordBlackList.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
         <script src="js/vendor/shuffleLetters.js"></script>
@@ -42,24 +58,23 @@
         <div data-role="page" id="page1" data-theme="d">
 
             <div data-role="header" data-position="fixed" id="headerDiv">
+               <!-- <a href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-notext ui-btn-icon-left ui-icon-bars" id="panelReveal"></a>-->
                 <h1> The Password Black List </h1>
             </div>
 
             <div role="main" class="ui-content">   
 
                 <div id="introDiv"> 
+                        <h2 id="shuffleText"> Revealing the World's most frequently used passwords </h2>
 
-                    <h2 id="shuffleText"> The World's most frequently used passwords revealed </h2>
-
-                    <p> The Password Black List was developed to highlight the epidemic of weak passwords currently in circulation across the web. The app scrutinises the 100 most common passwords.</p>
+                        <p>The Password Black List was developed to highlight the epidemic of weak passwords currently in circulation across the web. The app scrutinises the 100 most common passwords</p>
                  
                 </div> <!-- / introDiv -->
 
                 <div id="factDiv">
-                    
-                    <h4> An eye opening analysis of the most prevalent passwords on the internet.</h4>
-
-                    <p> Protect your personal online data... 
+                    <h3> An eye opening analysis of the most prevalent passwords on the internet.</h3>
+                    </br>
+                    <p> Please protect your personal online data 
                     </p>
 
                 </div> <!-- / factDiv -->
@@ -67,18 +82,16 @@
 
                 <div id="filterDiv">
 
-                    <p> Search passwords below </p>
                     <form class="ui-filterable">
-                        <input id="filterInput" data-type="search">
+                        <input id="filterInput" data-type="search" data-filter-placeholder="Fiter the passwords...">
                     </form>
 
                 </div>  <!-- / filterDiv -->
 
 
                 <div id="tableDiv">
-                   
                    <ul data-role="listview" data-autodividers="true" data-filter="true" data-filter-placeholder="Filter me.." id="listCustom" data-divider-theme='a' data-input="#filterInput" class="ui-nodisc-icon ui-alt-icon">
-                    </ul>
+                                        </ul>
 
                  </div> <!-- / tableDiv -->
 
@@ -86,14 +99,14 @@
 
             <div data-role="footer" id="footerDiv" > 
                     <h4>
-                        Lets hope your password(s) will <strong>NEVER </strong> feature here....
+                        Lets hope your password(s) <strong>NEVER </strong> feature here....
                     </h4>
             </div> <!-- / footerDiv -->
 
         </div> <!-- / page1 -->
 
         <!-- Start of infoPage -->
-        <div data-role="page" id="infoPage">
+        <div data-role="page" id="infoPage" data-theme="none">
 
                 <div data-role="header" id="headerDiv">
                     <h1> Password Analysis </h1>
@@ -109,31 +122,40 @@
 
                     <div id="testResultsDiv">
 
-                        <p class="lowercaseTest"> lowercaseTest results</p>
-                        <p class="uppercaseTest">  <a class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-b ui-btn-inline"></a> uppercaseTest results</p>
-                        <p class="numberTest"> numberTest results</p>
-                        <p class="symbolsTest"> symbolsTest results</p>
-                        <p class="lengthTest"> lengthTest results</p>
+                        <p class="lowercaseTest ui-nodisc-icon ui-alt-icon"> lowercaseTest results</p>
+                        <p class="uppercaseTest ui-nodisc-icon ui-alt-icon">uppercaseTest results</p>
+                        <p class="numberTest ui-nodisc-icon ui-alt-icon"> numberTest results</p>
+                        <p class="symbolsTest ui-nodisc-icon ui-alt-icon"> symbolsTest results</p>
+                        <p class="lengthTest ui-nodisc-icon ui-alt-icon"> lengthTest results</p>
                     </div> <!-- / testsDiv -->
                 
                 </div><!-- / Content Div -->
 
-                <div data-role="footer" id="footerDiv" data-position="fixed"><h4> Ensure the next password you create passes these 5 basic tests</h4></div>
+                <div data-role="footer" id="footerInfoDiv" data-position="fixed"><h4> Ensure the next password you create passes these 5 basic tests</h4></div>
         </div> <!-- End of infoPage -->
 
         <script src="js/main.js"></script>
         <script>
-            
-            jsonTask();
+            $(document).ready(function(){
+
+                // event handler for clicks on injected li dividers
+                $('body').on('click','.ui-li-divider',function(){
+
+                    var li = $(this).next(':not(.ui-li-divider)');
+                    while ( li.length > 0 ) {
+                        li.toggle();
+                        li = li.next(':not(.ui-li-divider)');
+                    }
+                });
+                jsonTask();
+            });
 
           $(document).on("pageshow", "#page1", function () {
 
                 
                 // Third party plugin used to shuffle text
                 $("#shuffleText").shuffleLetters();
-            });
-            
-                          
+            });                  
         </script>
     </body>
 </html>

@@ -1,14 +1,31 @@
 
+/*
+* Author: Robert Hunter
+* Assignment: WI2.0 Mobile Development, Digital Skills Academy
+* Date : 2015/07/15
+* Ref: 
+    https://api.jquery.com/
+    http://jquerymobile.com/
+    http://devdocs.io/javascript/
+    http://tutorialzine.com/2011/09/shuffle-letters-effect-jquery/
+    https://themeroller.jquerymobile.com/
+    http://stackoverflow.com/questions/tagged/jquery-mobile
+    http://realfavicongenerator.net/
+    http://www.initializr.com/
+*/
 #headerDiv {
     background-color: rgb(20,20,20);
-    color:white;
     min-height: 6vh;
 }
 
+#headerDiv h1 {
+    color:white;
+}
+
 #introDiv {
-    background-color: rgb(239,239,239);
+    background-color: rgb(230,225,220);
     padding: 15px 15px;
-    min-height: 30vh;
+    min-height: 25vh;
     border: solid 2px lightGray;
     text-align: center;
 
@@ -25,25 +42,33 @@
      background-size: cover;
      color: white;
      text-align: center;
-     min-height: 25vh;
+     min-height: 20vh;
      border: solid 2px black;
 }
 
 #filterDiv {
-    background-color: white;
+    background-color: rgb(235,235,235);
     padding: 15px 15px;
 }
 
 #filterInput {
     background-color: gray;
+    color: white;
 }
 
 #tableDiv {
-    background-color: lightGreen;
     padding: 15px 15px;
+    border: solid 2px gray;
+    background-color: rgb(230,225,220);
 }
 
 #footerDiv {
+    background-color: rgb(20,20,20);
+    color: white;
+    border: solid 1px darkGray;
+}
+
+#footerInfoDiv {
     background-color: orange;
 }
 
@@ -125,14 +150,11 @@
     margin: auto auto;
 }
 
-#testIntroDesc {
-
-
-}
-
-
 
 body .ui-header .ui-title {
  white-space: normal;
  padding: auto auto;
 }
+
+
+
